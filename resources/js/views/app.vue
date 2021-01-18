@@ -1,7 +1,10 @@
 <template>
   <div>
     {{message}}
+      <button>Hello World</button>
+
   </div>
+
 </template>
 <script>
 const default_layout = "default";
