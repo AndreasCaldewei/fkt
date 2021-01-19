@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/api/employees', 'App\Http\Controllers\Employee\EmployeeController@index')->where('any', '.*');
-Route::get('/api/companys', 'App\Http\Controllers\Company\CompanyController@index')->where('any', '.*');
+
 
 Route::get('/{any}', 'App\Http\Controllers\PagesController@index')->where('any', '.*');

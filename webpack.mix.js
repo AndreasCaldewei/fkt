@@ -31,4 +31,4 @@ mix.browserSync({
             usePolling: true,
             interval: 500
 }
-});
+}).vue();

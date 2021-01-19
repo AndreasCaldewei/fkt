@@ -20,13 +20,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var default_layout = "default";
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  computed: {},
   data: function data() {
     return {
-      message: 'HelloWOrld'
+      message: 'HelloWOrld',
+      employees: [],
+      companys: []
     };
+  },
+  methods: {
+    getEmployees: function getEmployees() {
+      var _this = this;
+
+      fetch('/api/employees').then(function (res) {
+        return res.json();
+      }).then(function (json) {
+        console.log(json);
+        _this.employees = json;
+      });
+    },
+    getCompnanys: function getCompnanys() {
+      var _this2 = this;
+
+      fetch('/api/companys').then(function (res) {
+        return res.json();
+      }).then(function (json) {
+        console.log(json);
+        _this2.companys = json;
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.getEmployees();
+    this.getCompnanys();
   }
 });
 
@@ -150,8 +180,15 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._v("\n  " + _vm._s(_vm.message) + "\n    "),
-    _c("button", [_vm._v("Hello World")])
+    _vm._v("\n    " + _vm._s(_vm.message) + "\n    "),
+    _c("button", [_vm._v("Hello World")]),
+    _vm._v(
+      "\n    Data:\n    " +
+        _vm._s(_vm.employees) +
+        "\n    " +
+        _vm._s(_vm.companys) +
+        "\n\n"
+    )
   ])
 }
 var staticRenderFns = []
