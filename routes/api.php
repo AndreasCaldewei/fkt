@@ -16,11 +16,11 @@ use App\Http\Controllers\Company\CompanyController;
 */
 
 Route::get('employees', [EmployeeController::class, 'index']);
+Route::post('employees', [EmployeeController::class, 'create']);
+
 
 Route::get('companies', [CompanyController::class, 'index']);
 Route::post('companies', [CompanyController::class, 'create']);
-
-
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

@@ -15,10 +15,18 @@ class CompanyController extends Controller
 
     public function create(Request $request) {
 
+        $validated = Validator($request->all(), [
+            'company_name' => 'required',
+        ]);
+
+        if ($validated->fails()) {
+            $response['response'] = $validated->messages();
+            return response()->json($validated->messages(), 400);
+        }
+
+
         $company = new Company();
-
         $company->company_name = $request->company_name;
-
         $company->save();
 
 

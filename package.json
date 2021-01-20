@@ -1,6 +1,10 @@
 {
     "private": true,
     "scripts": {
+        "sail": "./vendor/bin/sail",
+        "start": "./vendor/bin/sail up",
+        "migrate": "./vendor/bin/sail artisan migrate",
+        "tinker": "./vendor/bin/sail artisan tinker",
         "dev": "npm run development",
         "development": "mix",
         "watch": "mix watch",
@@ -21,6 +25,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "vue": "^2.6.12"
+        "vue": "^2.6.12",
+        "vue-meta": "^2.4.0",
+        "vue-router": "^3.4.9"
     }
 }

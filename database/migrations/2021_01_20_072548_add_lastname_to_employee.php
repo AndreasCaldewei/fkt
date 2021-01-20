@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddNameToCompaniesTable extends Migration
+class AddLastnameToEmployee extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddNameToCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::table('companies', function (Blueprint $table) {
-            $table->string('company_name');
-
+        Schema::table('employees', function (Blueprint $table) {
+            $table->string('lastname');
+            $table->string('email');
         });
     }
 
@@ -26,7 +26,7 @@ class AddNameToCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::table('companies', function (Blueprint $table) {
+        Schema::table('employee', function (Blueprint $table) {
             //
         });
     }

@@ -10,8 +10,10 @@ class Employee extends Model
     use HasFactory;
 
 
+    protected $fillable = ['company_id'];
+
     public function company() {
-        return $this->hasOne(Company::class);
+        return $this->belongsTo(Company::class);
     }
 
 }
